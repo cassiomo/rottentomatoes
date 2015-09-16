@@ -14,38 +14,6 @@ class ViewController: UITableViewController {
     
     override func viewDidAppear(animated: Bool) {
         super.viewDidAppear(animated)
-        
-        //let YourApiKey = "9htuhtcb4ymusd73d4z6jxcj" // Fill with the key you registered at http://developer.rottentomatoes.com
-        //let RottenTomatoesURLString = "http://api.rottentomatoes.com/api/public/v1.0/lists/dvds/top_rentals.json?apikey=" + YourApiKey
-        
-//        let cachedDataUrlString = "https://gist.githubusercontent.com/timothy1ee/d1778ca5b944ed974db0/raw/489d812c7ceeec0ac15ab77bf7c47849f2d1eb2b/gistfile1.json"
-        
-        //let request = NSMutableURLRequest(URL: NSURL(string :RottenTomatoesURLString)!)
-//        let request = NSMutableURLRequest(URL: NSURL.URLWithString(cachedDataUrlString))
-//        
-//        NSURLConnection.sendAsynchronousRequest(request, queue: NSOperationQueue.mainQueue(), completionHandler:{ (response, data, error) in
-//            var errorValue: NSError? = nil
-//            let dictionary = NSJSONSerialization.JSONObjectWithData(data, options: nil, error: &errorValue) as NSDictionary
-//        })
-        
-        //let request = NSMutableURLRequest(URL: NSURL(string :RottenTomatoesURLString)!)
-        
-//        NSURLConnection.sendAsynchronousRequest(request, queue: NSOperationQueue.mainQueue(), completionHandler:{ (response, data, error) in
-//            
-//            var errorValue: NSError? = nil
-//            //let dictionary = NSJSONSerialization.JSONObjectWithData(data, options: nil, error: &errorValue) as NSDictionary
-//            //let dictionary = NSJSONSerialization.JSONObjectWithData(data!, options: nil) as NSDictionary
-//            //let dictionary = NSJSONSerialization.JSONObjectWithData(data, options: nil, error: &errorValue) as NSDictionary
-//            do {
-//                let dictionary = try NSJSONSerialization.JSONObjectWithData(data!, options: NSJSONReadingOptions.MutableContainers) as? NSDictionary
-//                print(dictionary)
-//                self.moviesArray = (dictionary["movies"] as! NSArray)
-//                self.tableView.reloadData()
-//            } catch let error as NSError {
-//                print(error)
-//            }
-//
-//        })
         performAsyncMovieFetch()
     }
     
@@ -63,7 +31,6 @@ class ViewController: UITableViewController {
                 if rawMovieData != nil {
                     do {
                         if let dictionary = try NSJSONSerialization.JSONObjectWithData(rawMovieData!, options: NSJSONReadingOptions(rawValue: 0)) as? NSDictionary {
-                            //self.movies = movies
                             self.moviesArray = (dictionary["movies"] as! NSArray)
                             self.tableView.reloadData()
                         }
