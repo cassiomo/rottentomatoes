@@ -20,10 +20,11 @@ class ViewController: UITableViewController {
         let request = NSMutableURLRequest(URL: NSURL(string :RottenTomatoesURLString)!)
         
         NSURLConnection.sendAsynchronousRequest(request, queue: NSOperationQueue.mainQueue(), completionHandler:{ (response, data, error) in
-            var errorValue: NSError? = nil
-            let dictionary = NSJSONSerialization.JSONObjectWithData(data, options: nil, error: &errorValue) as NSDictionary
-            self.moviesArray = dictionary["movies"] as NSArray
-            self.tableView.reloadData()
+//            var errorValue: NSError? = nil
+            //let dictionary = NSJSONSerialization.JSONObjectWithData(<#T##data: NSData##NSData#>, options: <#T##NSJSONReadingOptions#>)
+            //let dictionary = NSJSONSerialization.JSONObjectWithData(data, options: nil, error: &errorValue) as NSDictionary
+            //self.moviesArray = (dictionary["movies"] as! NSArray)
+            //self.tableView.reloadData()
         })
 
     }
@@ -37,9 +38,9 @@ class ViewController: UITableViewController {
     }
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let movie = self.moviesArray![indexPath.row] as NSDictionary
-        let cell = tableView.dequeueReusableCellWithIdentifier("com.xzero.mycell") as MovieTableViewCell
-        cell.movieTitleLabel.text = movie["title"] as NSString
+        let movie = self.moviesArray![indexPath.row] as! NSDictionary
+        let cell = tableView.dequeueReusableCellWithIdentifier("com.xzero.mycell") as! MovieTableViewCell
+        cell.movieTitleLabel.text = movie["title"] as! NSString as String
         
         return cell
     }
@@ -47,7 +48,7 @@ class ViewController: UITableViewController {
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         //NSLog("did tap row : \(indexPath.row)")
         let details = MovieDetailsViewController()
-        let movie = self.moviesArray![indexPath.row] as NSDictionary
+        let movie = self.moviesArray![indexPath.row] as! NSDictionary
         details.movieDictionary = movie
         self.navigationController?.pushViewController(details, animated: true)
     }
