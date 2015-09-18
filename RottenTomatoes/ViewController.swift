@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import AFNetworking
 
 class ViewController: UITableViewController {
     
@@ -53,9 +54,21 @@ class ViewController: UITableViewController {
     }
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let movie = self.moviesArray![indexPath.row] as! NSDictionary
+        //let movie = self.moviesArray![indexPath.row] as! NSDictionary
+        let movie = Movie(dictionary: moviesArray![indexPath.row] as! NSDictionary)
+        
         let cell = tableView.dequeueReusableCellWithIdentifier("com.xzero.mycell") as! MovieTableViewCell
-        cell.movieTitleLabel.text = movie["title"] as! NSString as String
+        
+        cell.movieTitleLabel.text = movie.title as String
+        
+        let request = NSURLRequest(URL: movie.thumbnailURL)
+        
+        let cachedImage = UIImageView.sharedImageCache().cachedImageForRequest(request)
+        
+        if (cachedImage != nil) {
+            
+        }
+        
         
         return cell
     }
