@@ -66,7 +66,16 @@ class ViewController: UITableViewController {
         let cachedImage = UIImageView.sharedImageCache().cachedImageForRequest(request)
         
         if (cachedImage != nil) {
+            cell.movieImageView.image = cachedImage
+        } else {
             
+            cell.movieImageView.setImageWithURLRequest(request, placeholderImage: nil, success: { (request, response, image) in
+                cell.movieImageView.alpha = 0.0
+                cell.movieImageView.image = image
+                UIView.animateWithDuration(1.0, animations: {
+                    cell.movieImageView.alpha = 1.0
+                })
+                }, failure: nil)
         }
         
         
