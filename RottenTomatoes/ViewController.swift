@@ -13,9 +13,15 @@ import MBProgressHUD
 class ViewController: UITableViewController {
     
     var moviesArray: NSArray?
+    var movieRefreshControl: UIRefreshControl!
     
     override func viewDidAppear(animated: Bool) {
         super.viewDidAppear(animated)
+        
+        movieRefreshControl = UIRefreshControl()
+        movieRefreshControl.addTarget(self, action: "onRefresh", forControlEvents: UIControlEvents.ValueChanged)
+        self.tableView.insertSubview(movieRefreshControl, atIndex: 0)
+        
         MBProgressHUD.showHUDAddedTo(self.view, animated: true)
         performAsyncMovieFetch()
         MBProgressHUD.hideAllHUDsForView(self.view, animated:true)
@@ -48,6 +54,21 @@ class ViewController: UITableViewController {
         }
     }
     
+    func delay(delay:Double, closure:()->()) {
+        dispatch_after(
+            dispatch_time(
+                DISPATCH_TIME_NOW,
+                Int64(delay * Double(NSEC_PER_SEC))
+            ),
+            dispatch_get_main_queue(), closure)
+    }
+    
+    func onRefresh() {
+        delay(2, closure: {
+            self.movieRefreshControl.endRefreshing()
+        })
+    }
+    
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if let array = moviesArray {
             return array.count
@@ -71,7 +92,6 @@ class ViewController: UITableViewController {
         if (cachedImage != nil) {
             cell.movieImageView.image = cachedImage
         } else {
-            
             cell.movieImageView.setImageWithURLRequest(request, placeholderImage: nil, success: { (request, response, image) in
                 cell.movieImageView.alpha = 0.0
                 cell.movieImageView.image = image
