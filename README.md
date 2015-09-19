@@ -23,4 +23,4 @@ Optional
 
 Walkthrough
 
-![Alt text](https://github.com/cassiomo/rottentomatoes/blob/master/rottentomatoes.gif "rottentomatoes.gif"
+![Alt text](https://github.com/cassiomo/rottentomatoes/blob/master/rottentomatoes.gif "rottentomatoes.gif")
