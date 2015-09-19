@@ -26,6 +26,7 @@
         <!--View Controller-->
         <scene sceneID="BTl-aJ-bVe">
             <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="IKG-Jm-cqI" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <tableViewController id="5fL-DM-gPI" customClass="ViewController" customModule="RottenTomatoes" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="113" sectionHeaderHeight="22" sectionFooterHeight="22" id="AV4-lE-MGR">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
@@ -63,7 +64,6 @@
                                     <outlet property="movieDescriptionLabel" destination="tDU-qL-4eF" id="YSM-Hd-dAO"/>
                                     <outlet property="movieImageView" destination="pnB-tc-G36" id="acj-vB-xf1"/>
                                     <outlet property="movieTitleLabel" destination="Am5-JZ-Ouw" id="akW-NN-TvF"/>
-                                    <segue destination="A1K-Wb-0IS" kind="show" id="lEh-eR-uDw"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -74,7 +74,6 @@
                     </tableView>
                     <navigationItem key="navigationItem" id="Key-Z5-Qxu"/>
                 </tableViewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="IKG-Jm-cqI" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="252" y="969"/>
         </scene>
@@ -94,7 +93,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="EUh-mG-T35" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="974" y="1287"/>
+            <point key="canvasLocation" x="978" y="963"/>
         </scene>
     </scenes>
 </document>
