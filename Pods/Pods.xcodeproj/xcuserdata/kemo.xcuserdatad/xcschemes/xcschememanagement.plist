@@ -9,6 +9,11 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>MBProgressHUD.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>Pods-RottenTomatoes.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -17,12 +22,17 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>25CFA947DEC8B573A8394700916166C0</key>
+		<key>6512E057C1C8115D0A457D995C79858E</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>A1105147A9C1239B4356B55E25ECC976</key>
+		<key>9A60BFC24374810064494661FF99DC2D</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>D5E5410D306DC9D2E0318D8C51C769A5</key>
 		<dict>
 			<key>primary</key>
 			<true/>

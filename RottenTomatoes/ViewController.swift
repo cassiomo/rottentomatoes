@@ -8,6 +8,7 @@
 
 import UIKit
 import AFNetworking
+import MBProgressHUD
 
 class ViewController: UITableViewController {
     
@@ -15,7 +16,9 @@ class ViewController: UITableViewController {
     
     override func viewDidAppear(animated: Bool) {
         super.viewDidAppear(animated)
+        MBProgressHUD.showHUDAddedTo(self.view, animated: true)
         performAsyncMovieFetch()
+        MBProgressHUD.hideAllHUDsForView(self.view, animated:true)
     }
     
     func performAsyncMovieFetch() {
