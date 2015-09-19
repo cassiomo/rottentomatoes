@@ -23,3 +23,4 @@ Optional
 
 Walkthrough
 
+![Alt text](https://github.com/cassiomo/RottenTomatoes/blob/master/popular.gif "rottentomatoes.gif"
