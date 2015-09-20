@@ -15,6 +15,9 @@ class ViewController: UITableViewController {
     var moviesArray: NSArray?
     var movieRefreshControl: UIRefreshControl!
     
+    @IBOutlet weak var networkErrorView: UIView!
+    @IBOutlet weak var networkErrorLabel: UILabel!
+    
     override func viewDidAppear(animated: Bool) {
         super.viewDidAppear(animated)
         
@@ -33,6 +36,8 @@ class ViewController: UITableViewController {
         
         // Set the quality of service i.e. queue priority to perform the task off of the main queue
         let qos = Int(QOS_CLASS_USER_INITIATED.rawValue)
+        
+        self.showNetworkError(false)
         // fetch the content of the url on a different queue other than the main queue (so that it does not block the UI)
         dispatch_async(dispatch_get_global_queue(qos, 0)) { () -> Void in
             let rawMovieData = NSData(contentsOfURL: cachedDataUrl!)
@@ -49,8 +54,21 @@ class ViewController: UITableViewController {
                     }
                 } else {
                     print("Raw data is nil")
+                    NSLog("NetworkError:")
+                    self.showNetworkError(true)
                 }
             }
+        }
+    }
+    
+    func showNetworkError(show: Bool) {
+        if !show {
+            networkErrorLabel.hidden = !show
+            networkErrorView.hidden = !show
+        } else {
+            networkErrorLabel.bringSubviewToFront(networkErrorView)
+            networkErrorLabel.hidden = show
+            networkErrorView.hidden = show
         }
     }
     
