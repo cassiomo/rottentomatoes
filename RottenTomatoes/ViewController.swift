@@ -119,6 +119,9 @@ class ViewController: UITableViewController {
             let movie = Movie(dictionary: moviesArray![indexPath.row] as! NSDictionary)
             //controller.movie = Movie(dictionary: moviesArray[indexPath.row] as! NSDictionary)
             controller.movie = movie
+            print("OK")
+            print(controller.movie?.title)
+
         }
     }
     
