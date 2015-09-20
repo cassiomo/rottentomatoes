@@ -21,6 +21,8 @@ class ViewController: UITableViewController {
     override func viewDidAppear(animated: Bool) {
         super.viewDidAppear(animated)
         
+        self.navigationItem.title = "Box Office"
+        
         movieRefreshControl = UIRefreshControl()
         movieRefreshControl.addTarget(self, action: "onRefresh", forControlEvents: UIControlEvents.ValueChanged)
         self.tableView.insertSubview(movieRefreshControl, atIndex: 0)

@@ -16,6 +16,12 @@ class Movie : NSObject {
     init(dictionary : NSDictionary) {
         self.diction = dictionary
     }
+
+    var year: NSNumber {
+        get {
+            return diction["year"] as! NSNumber
+        }
+    }
     
     var title : NSString {
         get {
