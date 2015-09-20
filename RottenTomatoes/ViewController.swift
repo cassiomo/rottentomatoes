@@ -104,22 +104,21 @@ class ViewController: UITableViewController {
         return cell
     }
     
-    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        //NSLog("did tap row : \(indexPath.row)")
-        let details = MovieDetailsViewController()
-        let movie = self.moviesArray![indexPath.row] as! NSDictionary
-        details.movieDictionary = movie
-        self.navigationController?.pushViewController(details, animated: true)
-    }
+//    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+//        //NSLog("did tap row : \(indexPath.row)")
+//        let details = MovieDetailsViewController()
+//        let movie = self.moviesArray![indexPath.row] as! NSDictionary
+//        details.movieDictionary = movie
+//        self.navigationController?.pushViewController(details, animated: true)
+//    }
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if segue.identifier == "details" {
-//            if let controller = segue.destinationViewController as! MovieDetailsViewController {
-//               print(1)
-//            }
-            //let controller = segue.destinationViewController as! MovieDetailsViewController
-            //let indexPath = self.tableView.indexPathForSelectedRow!
+            let controller = segue.destinationViewController as! MovieDetailsViewController
+            let indexPath = self.tableView.indexPathForSelectedRow!
+            let movie = Movie(dictionary: moviesArray![indexPath.row] as! NSDictionary)
             //controller.movie = Movie(dictionary: moviesArray[indexPath.row] as! NSDictionary)
+            controller.movie = movie
         }
     }
     
