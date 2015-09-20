@@ -143,7 +143,6 @@ class ViewController: UITableViewController {
             let controller = segue.destinationViewController as! MovieDetailsViewController
             let indexPath = self.tableView.indexPathForSelectedRow!
             let movie = Movie(dictionary: moviesArray![indexPath.row] as! NSDictionary)
-            //controller.movie = Movie(dictionary: moviesArray[indexPath.row] as! NSDictionary)
             controller.movie = movie
             print("OK")
             print(controller.movie?.title)
