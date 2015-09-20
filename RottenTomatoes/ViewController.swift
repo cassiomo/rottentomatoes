@@ -84,6 +84,8 @@ class ViewController: UITableViewController {
         let cell = tableView.dequeueReusableCellWithIdentifier("com.xzero.mycell") as! MovieTableViewCell
         
         cell.movieTitleLabel.text = movie.title as String
+        cell.movieDescriptionLabel.text = "\(movie.mpaaRating) \(movie.synopsis)"
+        
         
         let request = NSURLRequest(URL: movie.thumbnailURL)
         
