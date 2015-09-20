@@ -97,13 +97,17 @@ class ViewController: UITableViewController {
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         //let movie = self.moviesArray![indexPath.row] as! NSDictionary
+        
         let movie = Movie(dictionary: moviesArray![indexPath.row] as! NSDictionary)
         
         let cell = tableView.dequeueReusableCellWithIdentifier("com.xzero.mycell") as! MovieTableViewCell
         
         cell.movieTitleLabel.text = movie.title as String
-        cell.movieDescriptionLabel.text = "\(movie.mpaaRating) \(movie.synopsis)"
         
+        cell.movieRating.text = movie.mpaaRating as String
+        cell.movieDescriptionLabel.text = movie.synopsis as String
+        cell.movieDescriptionLabel.numberOfLines = 0
+        cell.movieDescriptionLabel.sizeToFit()
         
         let request = NSURLRequest(URL: movie.thumbnailURL)
         

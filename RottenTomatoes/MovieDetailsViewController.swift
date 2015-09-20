@@ -17,9 +17,11 @@ class MovieDetailsViewController: UIViewController {
     @IBOutlet weak var posterImage: UIImageView!
     @IBOutlet weak var movieTitle: UILabel!
     @IBOutlet weak var movieScore: UILabel!
+    @IBOutlet weak var detailView: UIView!
     @IBOutlet weak var movieRating: UILabel!
     @IBOutlet weak var movieSynopsis: UILabel!
     
+    @IBOutlet weak var scrollView: UIScrollView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -29,6 +31,9 @@ class MovieDetailsViewController: UIViewController {
         movieScore.text = "Critics Score: \(movie!.criticsScore), Audience Score:  \(movie!.audienceScore)"
         movieRating.text = movie!.mpaaRating as String
         movieSynopsis.text = movie!.synopsis as String
+        movieSynopsis.numberOfLines = 0
+        //movieSynopsis.preferredMaxLayoutWidth = 700
+        //movieSynopsis.lineBreakMode = NSLineBreakMode.ByWordWrapping
         movieSynopsis.sizeToFit()
         
         let request = NSURLRequest(URL: movie!.posterURL)
@@ -40,6 +45,7 @@ class MovieDetailsViewController: UIViewController {
             posterImage.setImageWithURLRequest(request, placeholderImage: nil, success: { (request, response, image) in
                 }, failure: nil)
         }
+        
     }
 
     override func didReceiveMemoryWarning() {
