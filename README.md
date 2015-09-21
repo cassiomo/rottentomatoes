@@ -19,15 +19,15 @@ Required
 
 Optional
 
-[ ] Add a tab bar for Box Office and DVD.
+[x] Add a tab bar for Box Office and DVD.
 
 [ ] Implement segmented control to switch between list view and grid view.
 
 [ ] Add a search bar.
 
-[ ] All images fade in.
+[x] All images fade in.
 
-[ ] For the large poster, load the low-res image first, switch to high-res when complete.
+[x] For the large poster, load the low-res image first, switch to high-res when complete.
 
 [ ] Customize the highlight and selection effect of the cell.
 
