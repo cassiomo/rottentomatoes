@@ -3,6 +3,9 @@ This is a movies app displaying box office and top rental DVDs using the Rotten 
 
 Time spent: 12  
 
+It tooks a 2 hours to search for the tab controller tutorial and make it work. 2-3 hours to improve the UI.
+Hook up the detail view took 2-3 hours. Another 4 hours to do research and learning. 
+
 Features
 
 Required

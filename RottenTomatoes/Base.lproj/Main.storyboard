@@ -5,7 +5,7 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8154"/>
     </dependencies>
     <scenes>
-        <!--Tab Switch View Controller-->
+        <!--DVD-->
         <scene sceneID="RhX-fB-L2a">
             <objects>
                 <viewController storyboardIdentifier="dvdTab" useStoryboardIdentifierAsRestorationIdentifier="YES" id="oab-FG-NOC" customClass="TabSwitchViewController" customModule="RottenTomatoes" customModuleProvider="target" sceneMemberID="viewController">
@@ -18,7 +18,8 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <containerView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="9Fq-nO-L4n">
-                                <rect key="frame" x="0.0" y="64" width="600" height="487"/>
+                                <rect key="frame" x="0.0" y="-39" width="600" height="655"/>
+                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <connections>
                                     <segue destination="5fL-DM-gPI" kind="embed" id="GB8-w5-fOy"/>
                                 </connections>
@@ -26,13 +27,13 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <navigationItem key="navigationItem" id="auz-GQ-Mb3"/>
+                    <navigationItem key="navigationItem" title="DVD" id="auz-GQ-Mb3"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="e1N-Pi-ean" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="445" y="-66"/>
+            <point key="canvasLocation" x="421" y="446"/>
         </scene>
-        <!--Tab Switch View Controller-->
+        <!--Movies-->
         <scene sceneID="74B-e6-Bxe">
             <objects>
                 <viewController storyboardIdentifier="movieTab" useStoryboardIdentifierAsRestorationIdentifier="YES" id="aHx-Hu-Mtg" customClass="TabSwitchViewController" customModule="RottenTomatoes" customModuleProvider="target" sceneMemberID="viewController">
@@ -45,7 +46,8 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <containerView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="2pY-mS-D3o">
-                                <rect key="frame" x="0.0" y="64" width="600" height="487"/>
+                                <rect key="frame" x="0.0" y="-31" width="600" height="647"/>
+                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <connections>
                                     <segue destination="5fL-DM-gPI" kind="embed" id="dqf-Ok-84t"/>
                                 </connections>
@@ -53,16 +55,16 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <navigationItem key="navigationItem" id="aAE-p9-8Sa"/>
+                    <navigationItem key="navigationItem" title="Movies" id="aAE-p9-8Sa"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="IvI-xv-4Yi" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="433" y="-785"/>
+            <point key="canvasLocation" x="421" y="-257"/>
         </scene>
-        <!--Tab Bar Controller-->
+        <!--Movies-->
         <scene sceneID="B1s-Km-Huh">
             <objects>
-                <tabBarController id="u8w-N0-ECX" sceneMemberID="viewController">
+                <tabBarController title="Movies" id="u8w-N0-ECX" sceneMemberID="viewController">
                     <tabBar key="tabBar" contentMode="scaleToFill" id="5bi-ri-c09">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -75,16 +77,15 @@
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hXR-JZ-DMX" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1103" y="67"/>
+            <point key="canvasLocation" x="-1263" y="-61"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="BTl-aJ-bVe">
             <objects>
                 <tableViewController id="5fL-DM-gPI" customClass="ViewController" customModule="RottenTomatoes" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="113" sectionHeaderHeight="22" sectionFooterHeight="22" id="AV4-lE-MGR">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="487"/>
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="647"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <view key="tableHeaderView" contentMode="scaleToFill" id="KfG-fk-SHC">
                             <rect key="frame" x="0.0" y="0.0" width="600" height="38"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -113,18 +114,18 @@
                                             <color key="textColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="My Movie Description" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tDU-qL-4eF">
+                                            <rect key="frame" x="131" y="46" width="229" height="58.5"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                            <color key="textColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
                                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="pnB-tc-G36">
                                             <rect key="frame" x="0.0" y="0.0" width="117" height="112.5"/>
                                         </imageView>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Ratings" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8Gp-7i-WNX">
-                                            <rect key="frame" x="131" y="37" width="182" height="21"/>
+                                            <rect key="frame" x="131" y="31" width="182" height="21"/>
                                             <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="13"/>
-                                            <color key="textColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="My Movie Description" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tDU-qL-4eF">
-                                            <rect key="frame" x="131" y="46" width="229" height="58.5"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                             <color key="textColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
@@ -153,7 +154,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="IKG-Jm-cqI" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1212" y="-343"/>
+            <point key="canvasLocation" x="1121" y="-129.5"/>
         </scene>
         <!--Movie Details View Controller-->
         <scene sceneID="uUV-SG-VMk">
@@ -164,7 +165,7 @@
                         <viewControllerLayoutGuide type="bottom" id="eBs-FN-e4E"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="ppF-Ni-NND">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="487"/>
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="647"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="eP6-st-Mc0">
@@ -220,7 +221,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="EUh-mG-T35" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1918" y="963"/>
+            <point key="canvasLocation" x="2046" y="59.5"/>
         </scene>
         <!--Movies-->
         <scene sceneID="9Dp-zD-X13">
@@ -266,6 +267,6 @@
         <image name="movie" width="32" height="32"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="GB8-w5-fOy"/>
+        <segue reference="dqf-Ok-84t"/>
     </inferredMetricsTieBreakers>
 </document>
