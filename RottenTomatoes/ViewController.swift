@@ -10,10 +10,16 @@ import UIKit
 import AFNetworking
 import MBProgressHUD
 
+enum tabView {
+    case MovieTab, DVDTab
+}
+
 class ViewController: UITableViewController {
     
     var moviesArray: NSArray?
     var movieRefreshControl: UIRefreshControl!
+    var tab : tabView = .MovieTab
+    var cachedDataUrl : NSURL?
     
     @IBOutlet weak var networkErrorView: UIView!
     @IBOutlet weak var networkErrorLabel: UILabel!
@@ -34,7 +40,18 @@ class ViewController: UITableViewController {
     
     func performAsyncMovieFetch() {
         
-        let cachedDataUrl = NSURL(string: "https://gist.githubusercontent.com/timothy1ee/d1778ca5b944ed974db0/raw/489d812c7ceeec0ac15ab77bf7c47849f2d1eb2b/gistfile1.json")
+        let movieDataUrl = NSURL(string: "https://gist.githubusercontent.com/timothy1ee/d1778ca5b944ed974db0/raw/489d812c7ceeec0ac15ab77bf7c47849f2d1eb2b/gistfile1.json")
+        
+        let dvdDataUrl = NSURL(string: "https://gist.githubusercontent.com/timothy1ee/e41513a57049e21bc6cf/raw/b490e79be2d21818f28614ec933d5d8f467f0a66/gistfile1.json")
+        
+        switch tab  {
+            case .DVDTab:
+                cachedDataUrl = dvdDataUrl
+                break
+            default:
+                cachedDataUrl = movieDataUrl
+        }
+        
         
         // Set the quality of service i.e. queue priority to perform the task off of the main queue
         let qos = Int(QOS_CLASS_USER_INITIATED.rawValue)
@@ -42,7 +59,7 @@ class ViewController: UITableViewController {
         self.showNetworkError(false)
         // fetch the content of the url on a different queue other than the main queue (so that it does not block the UI)
         dispatch_async(dispatch_get_global_queue(qos, 0)) { () -> Void in
-            let rawMovieData = NSData(contentsOfURL: cachedDataUrl!)
+            let rawMovieData = NSData(contentsOfURL: self.cachedDataUrl!)
             // Sending the results back to main queue to update UI using the fetched data
             dispatch_async(dispatch_get_main_queue()) {
                 if rawMovieData != nil {
