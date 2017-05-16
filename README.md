@@ -38,4 +38,4 @@ Optional
 
 Walkthrough
 
-<img src="https://github.com/cassiomo/rottentomatoes/blob/master/rottentomatoes.gif">
+<img src="https://raw.githubusercontent.com/cassiomo/rottentomatoes/master/rottentomatoes.gif">
